@@ -47,34 +47,34 @@ Syllabus of JavaScript (ES6 to ES11)
 
 						Introduction
 
-	=> JavaScript is the Scripting Language.
+	=> JavaScript is the "Scripting" Language.
 
-	=> JavaScript Released by Netscape.
+	=> JavaScript Released by "Netscape".
 	
-	=> Current Version of JavaScript is ES11.
+	=> Current Version of JavaScript is "ES11".
 
-	=> ES11 Introduced in 2020.
+	=> ES11 Introduced in "2020".
 
-	=> ES Stands for ECMA Script.
+	=> ES Stands for "ECMA Script".
 
-	=> JavaScript Popular in market from ES6.
+	=> JavaScript Popular in market from "ES6".
 
-	=> JavaScript used to build the Angular,React,NodeJS,VueJS,.....
+	=> JavaScript used to build the "Angular,React,NodeJS,VueJS,....."
 
 	=> we will save the JavaScript files with ".js" extension.
 
-	=> Visual Studio Code is the Recomended IDE to Build UI Applications.
+	=> "Visual Studio Code" is the Recomended IDE to Build UI Applications.
 
 	=> Visual Studio Code also called as "VSCode".
 
-	=> "VSCode" given by Microsoft and open source.
+	=> "VSCode" given by "Microsoft" and open source.
 
 	=> we can execute JavaScript in two ways.
 
 			1) intrepreter
 
 			2) node
-	=> intrepreter present in Browser Engines.
+	=> intrepreter present in "Browser Engines".
 
 		Ex.
 			Google Chrome
@@ -89,7 +89,7 @@ Syllabus of JavaScript (ES6 to ES11)
 
 	=> node tool present in "NodeJS".
 
-	=> JavaScript is the Object Based Scripting Language.
+	=> JavaScript is the "Object Based Scripting Language".
 
 	=> Vendor Provides the so many predefined Objects, as a UI Developer we can use Predefined Objects. 
 
@@ -109,7 +109,7 @@ Syllabus of JavaScript (ES6 to ES11)
 			----
 			----
 
-	=> JavaScript is the Synchronous Scripting Language.
+	=> JavaScript is the "Synchronous" Scripting Language.
 
 	=> we will save JavaScript files with ".js" extension.
 	
@@ -138,6 +138,51 @@ Software Installation
 	website : https://code.visualstudio.com/docs/?dv=win
 
 	file    : VSCodeUserSetup-x64-1.52.1.exe
+
+
+									***** Variables *****
+	- variables are used to store the data.
+			Ex.
+					string
+					number
+					boolean
+					Objects
+					arrays
+
+	- we will declare variables by using "var" , "let" and "const" keywords.
+
+	- "let" and "const" keywords introduced in ES6.
+
+	- variables should contain a-z , A-Z , 0-9 , $ and _
+
+	- variables should not start with numbers.
+
+Syntax.
+		var/let/const variablename = value;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
