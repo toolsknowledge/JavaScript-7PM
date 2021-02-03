@@ -73,7 +73,7 @@
 -->
 
 
-
+<!--
 <script>
     function fun_one(){
         return "Hello";
@@ -92,7 +92,7 @@
 </script>
 
 
-<!-- <script>
+ <script>
     function fun_one(arg1){
         console.log( arg1() );
     };
@@ -103,6 +103,136 @@
 
     fun_one( fun_two );      //Hello
 </script> -->
+
+<!--
+    Anonymous Functions 
+    ===================
+        - The function without name called as "Anonymous Functions".
+
+        - Anonymous Functions also called as "Arrow Functions".
+
+        - we will represent Arrow Functions by using "=>"
+
+        - Arrow Functions introduced in "ES6".
+
+    Syntax
+    ======
+    function declaration & Definition
+    #################################
+    var/let/cont variablename = (arg1,arg2,arg3,....argn)=>{
+            //business logic
+    };
+
+    call the function
+    #################
+    variblename(param1,param2,param3,......paramn)
+-->
+
+<!--
+<script>
+    let fun_one = ()=>{
+        return "welcome to arrow functions";
+    };
+    //console.log( fun_one() );         //welcome to arrow functions
+    console.log( fun_one );
+</script>
+-->
+
+
+<!--
+<script>
+    let outer = ()=>{
+        return ()=>{
+            return "Hello";
+        }
+    };
+    console.log( outer()() );
+
+</script>
+-->
+
+
+<!--
+<script>
+    let mean = (arg1,arg2,arg3)=>{
+        console.log( arg1(), arg2(), arg3() );
+    };
+
+    mean(
+        ()=>{
+            return "Angular11";
+        },
+        ()=>{
+            return "NodeJS";
+        },
+        ()=>{
+            return "MongoDB";
+        }
+    );     //Angular11 NodeJS MongoDB
+</script>
+-->
+
+
+<script>
+   let arr = [];
+
+    for(let i=0;i<5;i++){
+        arr.push( ()=>{
+            return "Hello";
+        } );
+    };
+
+    console.log( arr[0]() );
+    console.log( arr[1]() );
+    console.log( arr[2]() );
+    console.log( arr[3]() );
+    console.log( arr[4]() );
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
