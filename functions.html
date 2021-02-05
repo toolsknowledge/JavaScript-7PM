@@ -276,6 +276,7 @@
 </script>
 -->
 
+<!--
 <script>
     function fun_one(arg1,arg2="Hello_2",...arg3){
         console.log( arg1,arg2,arg3 );
@@ -286,6 +287,177 @@
     fun_one(null,null,null);            //null null [null]
     fun_one(10,20,30,40,50);            //10 20  [30, 40, 50]
 </script>
+-->
+
+
+
+<!--
+    Constructor Functions
+    ====================
+        - collection of variables and functions called as class.
+
+        - before "ES6", we will create classes by using "constructor functions".
+
+        - in constructor functions all the members initilized with "this" keyword.
+
+        - we will create objects by using "new" keyword.
+-->
+
+
+<!--
+<script>
+    function class_one(){
+        this.sub_one = "Angular11";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+    };
+    let obj = new class_one();
+    console.log( obj.sub_one, obj.sub_two, obj.sub_three );      //Angular11 NodeJS MongoDB
+</script>
+-->
+
+
+<!--
+<script>
+    function class_one(arg1,arg2,arg3){
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+    };
+    let obj1 = new class_one("Angular11","NodeJS","MongoDB");
+    console.log( obj1.var_one, obj1.var_two, obj1.var_three );          //Angular11 NodeJS MongoDB
+
+    let obj2 = new class_one("ReactJS","Deno","CassandraDB");
+    console.log( obj2.var_one, obj2.var_two, obj2.var_three );          //ReactJS Deno CassandraDB
+
+    let obj3 = new class_one("VueJS","Go","SQLServer");
+    console.log( obj3.var_one, obj3.var_two, obj3.var_three);           //VueJS Go SQLServer
+</script>
+-->
+
+<!--
+<script>
+    function class_one(){
+        this.sub_one = "ReactJS";
+        this.sub_two = "NodeJS";
+        this.sub_three = "MongoDB";
+
+        this.getSubOne = function(){
+            return this.sub_one;
+        };
+
+        this.getSubTwo = function(){
+            return this.sub_two;
+        };
+
+        this.getSubThree = function(){
+            return this.sub_three;
+        };
+    };
+
+    let obj = new class_one();
+    console.log( obj.getSubOne(),
+                 obj.getSubTwo(),
+                 obj.getSubThree() );                   //ReactJS NodeJS MongoDB
+</script>
+-->
+
+<!--
+    prototype
+    =========
+        - prototype is the predefined property, used to add the members dynamically
+-->
+
+<!--
+<script>
+    function class_one(){
+
+    };
+    class_one.prototype.var_one = "Angualr11";
+    class_one.prototype.var_two = "NodeJS";
+    class_one.prototype.var_three = "MongoDB";
+
+    class_one.prototype.fun_one = function(){
+        return this.var_one;
+    };
+
+    class_one.prototype.fun_two = function(){
+        return this.var_two;
+    };
+
+    class_one.prototype.fun_three = function(){
+        return this.var_three;
+    };
+
+    let obj = new class_one();
+    console.log( obj.fun_one(), obj.fun_two(), obj.fun_three() );      //Angualr11 NodeJS MongoDB
+</script>
+-->
+
+
+<!--
+    prototype chaining
+        - getting the data from "parent constructor function" to "child constructor function" called as prototype chaining
+-->
+<script>
+    function class_one(){};
+    class_one.prototype.var_one = "Hello_1";
+
+    function class_two(){};
+    class_two.prototype = Object.create( class_one.prototype );
+    class_two.prototype.var_two = "Hello_2";
+
+    function class_three(){};
+    class_three.prototype = Object.create(class_two.prototype);
+    class_three.prototype.var_three = "Hello_3";
+
+    let obj1 = new class_one();
+    console.log( obj1.var_one );                            //Hello_1
+
+    let obj2 = new class_two();
+    console.log( obj2.var_one, obj2.var_two );              //Hello_1 Hello_2
+
+    let obj3 = new class_three();
+    console.log( obj3.var_one, obj3.var_two, obj3.var_three );          //Hello_1 Hello_2 Hello_3
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
