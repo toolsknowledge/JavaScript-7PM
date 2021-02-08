@@ -398,7 +398,7 @@
 <!--
     prototype chaining
         - getting the data from "parent constructor function" to "child constructor function" called as prototype chaining
--->
+
 <script>
     function class_one(){};
     class_one.prototype.var_one = "Hello_1";
@@ -420,6 +420,281 @@
     let obj3 = new class_three();
     console.log( obj3.var_one, obj3.var_two, obj3.var_three );          //Hello_1 Hello_2 Hello_3
 </script>
+-->
+
+
+<!--
+    overriding
+        - overriding the parent class functionality with child class functionality called as prototype overriding
+-->
+
+
+<!--
+<script>
+    function class_one(){};
+    class_one.prototype.dbFun = function(){
+        return "MySQL Data Soon...!";
+    };
+
+    function class_two(){};
+    class_two.prototype = Object.create(class_one.prototype);
+    class_two.prototype.dbFun = function(){
+        return "MongoDB Data Soon...!";
+    }; 
+
+    let obj = new class_two();
+    console.log( obj.dbFun() );             //MongoDB Data Soon...!
+</script>
+-->
+
+
+<!-- 
+    Generators
+    ==========
+        - Generators are used to control the "flow of execution" inside function call.
+
+        - Generator functions prefixed with "*"
+
+        - Generator functions in general return cursor mechanism.
+
+        - in generator function each statement starts with "yield" keyword
+-->
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+        yield "Hello_2";
+        yield "Hello_3";
+        yield "Hello_4";
+        yield "Hello_5";
+    };
+
+    let my_cursor = fun_one();
+    console.log( my_cursor.next() );
+    console.log( my_cursor.next() );
+    console.log( my_cursor.next() );
+    console.log( my_cursor.next() );
+    console.log( my_cursor.next() );
+    console.log( my_cursor.next() );
+</script>
+-->
+
+
+<!--
+<script>
+    function *fun_one(){
+        yield 100;
+        yield *fun_two();
+        yield 300;
+    };
+
+    function *fun_two(){
+        yield 200;
+    };
+
+    let cursor = fun_one();
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+</script>
+-->
+
+
+<!--
+<script>
+    function *fun_one(){
+        yield "Angular";
+        yield "NodeJS";
+        return "MongoDB";
+        yield "VueJS";
+    };
+    let cursor = fun_one();
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+    console.log( cursor.next() );
+</script>
+-->
+
+<!--
+    IIFE
+    ====
+      - Immidiate Invokable Functional Expressions
+      - ES11
+      - when ever we define the function, automatically it will invoke
+
+      Syntax
+      ======
+      ((param1,param2,param3,.....paramn)=>{
+            //business logic
+      })(arg1,arg2,arg3,.....argn)
+-->
+
+<!--
+<script>
+    (()=>{
+        console.log("IIFE.....!");
+    })()     //IIFE.....!
+</script>
+-->
+
+
+<!--
+<script>
+    let res = ((param1,param2,param3)=>{
+        return `MEAN Stack Development ***** ${param1}<==>${param2}<==>${param3}`;
+    })("Angular11","NodeJS","MongoDB");
+
+    console.log( res );    //MEAN Stack Development ***** Angular11<==>NodeJS<==>MongoDB
+</script>
+-->
+
+<!-- Optional Parameters in Functions 
+
+    - while calling the functions, we can make parameters are optional (no need to supply).
+    
+    - Optional Parameters introduced in "ES6".
+
+    - we will represent Optional Parameters by using "?"
+
+    - Optional Parameters, will work in "TypeScript" Environement.
+
+    - we will install TypeScript by using following command.
+
+            > npm install -g typescript
+
+    - npm stands for node pakaging manager.
+
+    "-g" stands for global installation.
+
+    - we will save typescript files with ".ts" extension.
+
+    - browsers "won't" understand TypeScript.
+
+    - so, as a typescript developer we should convert "TypeScript" to Equalent "JavaScript".
+
+    - converting TypeScript to Equalent JavaScript called as "Transpilation".
+
+    - "tsc" is the tool, used to perform the "transpilation".
+
+    Ex.
+        > tsc demo.ts     (Transpilation)
+
+            o/p
+
+            demo.js
+
+        > node demo.js
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
