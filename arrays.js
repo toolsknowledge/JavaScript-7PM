@@ -120,83 +120,81 @@ let arr3 = arr.slice(3,6);
 console.log( [...arr1,...arr2,...arr3] );
 */
 
-
 /*
     //map()
-    //map() function, used to manipulate the each and every element of array
+    //it is used to manipulate the each and every array elememt.
     console.log(
         [10,20,30,40,50].map((element,index)=>{
             return element*10;
         })
     );     //[ 100, 200, 300, 400, 500 ]
 
-
     console.log(
-        [10,20,30,40,50].map((element,index)=>{
+        [100,200,300,400,500].map((element,index)=>{
             return `$ ${element}`;
         })
-    );     //[ '$ 10', '$ 20', '$ 30', '$ 40', '$ 50' ]
+    );  //[ '$ 100', '$ 200', '$ 300', '$ 400', '$ 500' ]
 */
+
+
 
 /*
     //filter()
-    //it is used to create the new array based on condition
+    //used to create the new array based on condition
     console.log(
         [10,20,30,40,50].filter((element,index)=>{
             return element<=30;
         })
-    );          //[ 10, 20, 30 ]
+    );              //[ 10, 20, 30 ]
+
     console.log(
-        [10,20,30,40,50].map((element,index)=>{
-            return element*10;
-        }).filter((element,index)=>{
-            return element<=300;
+        [100,200,300,400,500].filter((element,index)=>{
+            return element>=300;
         })
-    );    //[ 100, 200, 300 ]
+    );      //[ 300, 400, 500 ]
+
+
+console.log(
+    [1,2,3,4,5].map((element,index)=>{
+        return element*100;
+    }).filter((element,index)=>{
+        return element<=500;
+    })
+);              //[ 100, 200, 300, 400, 500 ]
 */
 
 /*
     //reduce()
-    //it is used to find the sum of array elements.
+    //it is used to find the sum of array elements
     console.log(
         [1,2,3,4,5].reduce((firstValue,nextValue)=>{
             return firstValue+nextValue;
         })
-    );                  //15
-
+    );     //15
     console.log(
-        [10,20,30,40,50].reduce((firstValue,nextValue)=>{
-            return firstValue+nextValue;
-        })
-    );          //150
-
-
-    console.log(
-        [1,2,3,4,5].map((element,index)=>{
-            return element-1;
+        [100,200,300,400,500].map((element,index)=>{
+            return element/10;
         }).filter((element,index)=>{
-            return element<=5;
+            return element<=50;
         }).reduce((firstValue,nextValue)=>{
             return firstValue+nextValue;
         })
-    );              //10
+    );              //150
 */
-
 
 /*
     //reduceRight()
-    //it is used to do the summation from right to left
+    //find the summation from right to left in array
     console.log(
         ["Angular11","to","Welcome"].reduceRight((firstValue,nextValue)=>{
             return firstValue+" "+nextValue;
         })
-    );    //Welcome to Angular11
+    );              //Welcome to Angular11
 */
-
 
 /*
     //some()
-    //if at least one element, satisfies the condition then it will return "true" otherwise it will return "false"
+    //if at least one element satisfies the condition, then it will return true otherwise false
     console.log(
         [10,20,30,40,50].some((element,index)=>{
             return element<=10;
@@ -211,61 +209,255 @@ console.log( [...arr1,...arr2,...arr3] );
 */
 
 
-
 /*
     //every()
-    //if all elements satisfies the condition then it will return "true" otherwise "false"
+    //if all elements satisfies the condition then it will return true otherwise it will return false
     console.log(
         [10,20,30,40,50].every((element,index)=>{
             return element<=50;
         })
     );          //true
 
+
     console.log(
         [10,20,30,40,50].every((element,index)=>{
             return element<50;
         })
-    );  //false
+    );              //false
 */
-
 
 /*
     //includes()
-    //it is used to check whether the element present or not
+    //it is used to search particular element
     console.log(
         [10,20,30,40,50].includes(30)
-    );      //true
+    );   //true
 
     console.log(
         [10,20,30,40,50].includes(300)
     );      //false
+
+    console.log(
+        ["Angular11","NodeJS","MongoDB"].includes("Angular11")
+    );      //true
 */
 
-//findIndex()
-//it is used to know the index of particular element
+/*
+    //findIndex()
+    //it is used to find the index of particular element
+    console.log(
+        [10,20,30,40,50].findIndex((element,index)=>{
+            return element === 40;
+        })
+    );   //3
+
+    console.log(
+        ["Angular11","ReactJS","VueJS","NodeJS","MongoDB"].findIndex((element,index)=>{
+            return element === "VueJS";
+        })
+    );    //2
+
+
+
+    let arr = [10,20,30,40,50];
+    arr.splice(arr.findIndex((element,index)=>{
+        return element===30;
+    }),1);
+    console.log(arr);  //[ 10, 20, 40, 50 ]
+
+
+
+    let arr1 = [100,200,300,400,500];
+    arr1.splice(arr1.findIndex((element,index)=>{
+        return element === 400;
+    }),1);
+    console.log(arr1);              //[ 100, 200, 300, 500 ]
+
+
+    let arr2 = [{"sub":"Angular11"},
+                {"sub":"NodeJS"},
+                {"sub":"ReactJS"},
+                {"sub":"VueJS"},
+                {"sub":"MongoDB"}];
+    arr2.splice(arr2.findIndex((element,index)=>{
+        return element.sub === "VueJS"
+    }),1);
+    console.log(arr2);
+*/
+
+
+/*
+    //indexOf()
+    //it won't return indexes to repeated elements
+    let arr = [100,200,100,200,300,400,100,200,300];
+    arr.forEach((element,index)=>{
+        console.log( arr.indexOf(element) );
+    });  //0 1 0 1 4 5 0 1 4
+*/
+
+
+/*
+let arr = [10,20,30,10,20,30];
+arr.forEach((element,index)=>{
+    console.log( arr.indexOf(element) );
+});   //0 1 2 0 1 2
+*/
+
+
+let arr = [1,2,3,1,2,3];
 console.log(
-    [10,20,30,40,50].findIndex((element,index)=>{
-        return element === 30;
+    arr.filter((element,index)=>{
+        return arr.indexOf(element) === index;
     })
-);          //2
+);   //[ 1, 2, 3 ]
 
 
-let arr = [100,200,300,400,500];
-arr.splice(arr.findIndex((element,index)=>{
-    return element === 400;
-}),1);
-console.log(arr);           //[ 100, 200, 300, 500 ]
 
-arr.splice(arr.findIndex((element,index)=>{
-    return element === 200;
-}),1);
-console.log(arr);           //[ 100, 300, 500 ]
 
-let arr1 = [{"sub":"Angular11"},{"sub":"ReactJS"},{"sub":"NodeJS"},{"sub":"MongoDB"},{"sub":"MySQL"}];
-arr1.splice(arr1.findIndex((element,index)=>{
-    return element.sub === "MySQL"
-}),1);
-console.log(arr1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
