@@ -308,76 +308,59 @@ console.log(
         return arr2.indexOf(element) === index;
     })
 );    //[ 10, 20, 30, 40 ]
-
 */
-
 
 /*
     //copyWithin()
+    //used to shift the indexes
     let arr1 = [10,20,30,40,50,60,70,80,90,100];
     arr1.copyWithin(3);
-    console.log(arr1);          //[10,20,30,10,20,30,40,50,60,70]
+    console.log(arr1);              //[10,20,30,10,20,30,40,50,60,70]
 
 
     let arr2 = [10,20,30,40,50,60,70,80,90,100];
     arr2.copyWithin(5);
-    console.log(arr2);          //[10, 20, 30, 40, 50,10, 20, 30, 40, 50]
+    console.log(arr2);              //[ 10, 20, 30, 40, 50, 10, 20, 30, 40, 50]
 
 
     let arr3 = [10,20,30,40,50,60,70,80,90,100];
-    arr3.copyWithin(0);
-    console.log(arr3);      //[10,20,30,40,50,60,70,80,90,100]
+    arr3.copyWithin(8);
+    console.log(arr3);          //[10,20,30,40,50,60,70,80,10,20]
 
 
     let arr4 = [10,20,30,40,50,60,70,80,90,100];
-    arr4.copyWithin(3,7);
-    console.log(arr4);    //[10, 20, 30, 80,  90,100, 70, 80, 90, 100]
+    arr4.copyWithin(2);
+    console.log(arr4);          //[ 10, 20, 10, 20, 30, 40, 50, 60, 70, 80]
 
 
     let arr5 = [10,20,30,40,50,60,70,80,90,100];
-    arr5.copyWithin(2,8);
-    console.log(arr5);    //[10, 20, 90, 100,  50,60, 70, 80,  90, 100]
+    arr5.copyWithin(2,5);
+    console.log(arr5);          //[10,  20, 60, 70,  80,90, 100, 80, 90, 100]
+
 
 
     let arr6 = [10,20,30,40,50,60,70,80,90,100];
-    arr6.copyWithin(8,2);
-    console.log(arr6);
+    arr6.copyWithin(2,8);
+    console.log(arr6);   //[10, 20,90, 100,  50,60, 70, 80,  90, 100]
 
 
     let arr7 = [10,20,30,40,50,60,70,80,90,100];
-    arr7.copyWithin(2,4,8);
-    console.log(arr7);
-
+    arr7.copyWithin(2,5,7);
+    console.log(arr7);     //10, 20, 60, 70,  50, 60, 70, 80, 90, 100]
 
 
     let arr8 = [10,20,30,40,50,60,70,80,90,100];
-    arr8.copyWithin(1,3,8);
-    console.log(arr8);
-*/
-
-/*
-    //find()
-    console.log(
-        [10,20,30].find((element,index)=>{
-            return element === 20;
-        })
-    );    //20
-
-    console.log(
-        [10,20,30].find((element,index)=>{
-            return element === 200;
-        })
-    );    //undefined
+    arr8.copyWithin(3,6,9);
+    console.log(arr8);          //[10, 20, 30, 70,  80,90, 70, 80, 90, 100]
 */
 
 
 /*
-    //immutability        State Management App  (NgRX)  
+    //immutability
     let arr1 = [10,20,30];
     let arr2 = [...arr1];
     console.log(arr1);                  //[ 10, 20, 30 ]
     console.log(arr2);                  //[ 10, 20, 30 ]
-
     arr1.push(40);
     arr2.push(50);
     console.log(arr1);                  //[ 10, 20, 30, 40 ]
@@ -385,59 +368,169 @@ console.log(
 */
 
 
-//mutability
-let arr1 = [10,20,30];
-let arr2 = arr1;
-console.log(arr1);                      //[ 10, 20, 30 ]
-console.log(arr2);                      //[ 10, 20, 30 ]
+/*
+    //mutability
+    let arr1 = [10,20,30];
+    let arr2 = arr1;
+    console.log(arr1);                  //[ 10, 20, 30 ]
+    console.log(arr2);                  //[ 10, 20, 30 ]
+
+    arr1.push(40);
+    arr2.push(50);
+    console.log(arr1);                  //[ 10, 20, 30, 40, 50 ]
+    console.log(arr2);                  //[ 10, 20, 30, 40, 50 ]
+*/
 
-arr1.push(40);
-arr2.push(50);
-console.log(arr1);                      //[ 10, 20, 30, 40, 50 ]
-console.log(arr2);                      //[ 10, 20, 30, 40, 50 ]
+
+
+/*
+    //find()
+    //it is used to perform the search operation
+    console.log(
+        ["Angular11","NodeJS","MongoDB"].find((element,index)=>{
+            return element === "Angular11";
+        })
+    );    //Angular11
 
 
+    console.log(
+        ["Angular11","NodeJS","MongoDB"].find((element,index)=>{
+            return element === "Angular";
+        })
+    );      //undefined
+*/
 
 
+/*
+    //sort()
+    //ascending order or decending order
+    let arr1 = [10,50,20,40,30];
+    console.log(
+        arr1.sort((num1,num2)=>{
+            return num1-num2;
+        })
+    );              //[ 10, 20, 30, 40, 50 ]
+    console.log(
+        arr1.sort((num1,num2)=>{
+            return num2-num1;
+        })
+    );          //[ 50, 40, 30, 20, 10 ]  
 
 
+    console.log(
+        [30,10,5,85,20,9].sort((num1,num2)=>{
+            return num1-num2;
+        })[1]
+    );    //9
 
 
+    console.log(
+        [30,10,5,85,20,9].sort((num1,num2)=>{
+            return num2-num1
+        })[1]
+    );    //30
+*/
 
 
+/*
+    //reverse()
+    //it is used to reverse the array elements
+    console.log(
+        [10,20,30,40,50].reverse()
+    );    //[ 50, 40, 30, 20, 10 ]
 
 
+    console.log(
+        ["Angular","React","Node"].reverse()
+    );    //[ 'Node', 'React', 'Angular' ]
 
 
+    console.log(
+        Array.from("Hello").reverse().join("")
+    );
+    //[ 'H', 'e', 'l', 'l', 'o' ]
+    //[ 'o', 'l', 'l', 'e', 'H' ]
+    //olleH
 
 
+    console.log(
+        Array.from("Welcome").reverse().join("")
+    );    //emocleW
 
 
+    console.log(
+        ["Angular","NodeJS","ReactJS"].map((element,index)=>{
+            return Array.from(element).reverse().join("") 
+        })
+    );   //["ralugnA","SJedoN","SJtcaeR"]  
 
 
+    console.log(
+        ["Angular","NodeJS","ReactJS"].map((element,index)=>{
+            return Array.from(element).reverse().join("") 
+        }).reverse()
+    );  
+    //["SJtcaeR","SJedoN","ralugnA"]
+*/
 
 
 
+/*
+//join()
+//toString()
 
+console.log(
+    ['H','E','L','L','0'].toString().replace(",","")
+);    //H,E,L,L,0   //HE,L,L,0
 
+console.log(
+    ['H','E','L','L','0'].toString().replace(/,/g, "")
+);   //HELL0
 
 
+console.log(
+    ['H','E','L','L','0'].join("")
+);    //HELL0
+*/
 
 
 
+/*
+    //substr()
+    console.log(
+        "Welcome to FullStack UI".substr(0,7)
+    );   //Welcome
 
 
+    console.log(
+        "Welcome to FullStack UI".substr(8,2)
+    );    //to
 
 
+    console.log(
+        "Welcome to FullStack UI".substr(11,9)
+    );      //FullStack
 
 
+    console.log(
+        "Welcome to FullStack UI".substr(21,2)
+    );     //UI
+*/
 
 
 
+//substring()
+console.log(
+    "Welcome to FullStack UI".substring(0,7)    
+);//Welcome
 
 
 
+console.log(
+    "H***e|||l&&&l&&&o".replace(/&/g,"").replace(/|/g,"")
+);
 
+//Hello
 
 
 
@@ -501,278 +594,6 @@ console.log(arr2);                      //[ 10, 20, 30, 40, 50 ]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 
 
