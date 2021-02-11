@@ -288,28 +288,179 @@ console.log(
 
 /*
     //indexOf()
-    //it won't return indexes to repeated elements
-    let arr = [100,200,100,200,300,400,100,200,300];
-    arr.forEach((element,index)=>{
-        console.log( arr.indexOf(element) );
-    });  //0 1 0 1 4 5 0 1 4
+    //it won't create indexes to repeated elements in array
+    let arr1 = ["Angular","NodeJS","Angular","ReactJS","NodeJS"];
+    arr1.forEach((element,index)=>{
+        console.log( arr1.indexOf(element) );
+    });   //0 1 0 3  1
+*/
+
+/*
+let arr1 = [100,200,300,100,200,300];
+arr1.forEach((element,index)=>{
+    console.log( arr1.indexOf(element) , index );
+});
+
+
+let arr2 = [10,20,30,40,10,20,40,10];
+console.log(
+    arr2.filter((element,index)=>{
+        return arr2.indexOf(element) === index;
+    })
+);    //[ 10, 20, 30, 40 ]
+
 */
 
 
 /*
-let arr = [10,20,30,10,20,30];
-arr.forEach((element,index)=>{
-    console.log( arr.indexOf(element) );
-});   //0 1 2 0 1 2
+    //copyWithin()
+    let arr1 = [10,20,30,40,50,60,70,80,90,100];
+    arr1.copyWithin(3);
+    console.log(arr1);          //[10,20,30,10,20,30,40,50,60,70]
+
+
+    let arr2 = [10,20,30,40,50,60,70,80,90,100];
+    arr2.copyWithin(5);
+    console.log(arr2);          //[10, 20, 30, 40, 50,10, 20, 30, 40, 50]
+
+
+    let arr3 = [10,20,30,40,50,60,70,80,90,100];
+    arr3.copyWithin(0);
+    console.log(arr3);      //[10,20,30,40,50,60,70,80,90,100]
+
+
+    let arr4 = [10,20,30,40,50,60,70,80,90,100];
+    arr4.copyWithin(3,7);
+    console.log(arr4);    //[10, 20, 30, 80,  90,100, 70, 80, 90, 100]
+
+
+    let arr5 = [10,20,30,40,50,60,70,80,90,100];
+    arr5.copyWithin(2,8);
+    console.log(arr5);    //[10, 20, 90, 100,  50,60, 70, 80,  90, 100]
+
+
+    let arr6 = [10,20,30,40,50,60,70,80,90,100];
+    arr6.copyWithin(8,2);
+    console.log(arr6);
+
+
+    let arr7 = [10,20,30,40,50,60,70,80,90,100];
+    arr7.copyWithin(2,4,8);
+    console.log(arr7);
+
+
+
+    let arr8 = [10,20,30,40,50,60,70,80,90,100];
+    arr8.copyWithin(1,3,8);
+    console.log(arr8);
+*/
+
+/*
+    //find()
+    console.log(
+        [10,20,30].find((element,index)=>{
+            return element === 20;
+        })
+    );    //20
+
+    console.log(
+        [10,20,30].find((element,index)=>{
+            return element === 200;
+        })
+    );    //undefined
 */
 
 
-let arr = [1,2,3,1,2,3];
-console.log(
-    arr.filter((element,index)=>{
-        return arr.indexOf(element) === index;
-    })
-);   //[ 1, 2, 3 ]
+/*
+    //immutability        State Management App  (NgRX)  
+    let arr1 = [10,20,30];
+    let arr2 = [...arr1];
+    console.log(arr1);                  //[ 10, 20, 30 ]
+    console.log(arr2);                  //[ 10, 20, 30 ]
+
+    arr1.push(40);
+    arr2.push(50);
+    console.log(arr1);                  //[ 10, 20, 30, 40 ]
+    console.log(arr2);                  //[ 10, 20, 30, 50 ]
+*/
+
+
+//mutability
+let arr1 = [10,20,30];
+let arr2 = arr1;
+console.log(arr1);                      //[ 10, 20, 30 ]
+console.log(arr2);                      //[ 10, 20, 30 ]
+
+arr1.push(40);
+arr2.push(50);
+console.log(arr1);                      //[ 10, 20, 30, 40, 50 ]
+console.log(arr2);                      //[ 10, 20, 30, 40, 50 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
