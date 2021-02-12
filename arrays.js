@@ -403,134 +403,240 @@ console.log(
 
 /*
     //sort()
-    //ascending order or decending order
-    let arr1 = [10,50,20,40,30];
+    //it is used to arrange the data either ascending order or decending order
     console.log(
-        arr1.sort((num1,num2)=>{
-            return num1-num2;
+        [10,50,20,40,30].sort((arg1,arg2)=>{
+            return arg1-arg2;
         })
-    );              //[ 10, 20, 30, 40, 50 ]
+    );    //[ 10, 20, 30, 40, 50 ]
     console.log(
-        arr1.sort((num1,num2)=>{
-            return num2-num1;
+        [10,50,20,40,30].sort((arg1,arg2)=>{
+            return arg2-arg1;
         })
-    );          //[ 50, 40, 30, 20, 10 ]  
+    );      //[ 50, 40, 30, 20, 10 ]
 
 
+    //2nd min element
     console.log(
-        [30,10,5,85,20,9].sort((num1,num2)=>{
-            return num1-num2;
+        [20,16,55,93,101,131].sort((arg1,arg2)=>{
+            return arg1-arg2
         })[1]
-    );    //9
+    );    //20
 
 
+    //2nd max element
     console.log(
-        [30,10,5,85,20,9].sort((num1,num2)=>{
-            return num2-num1
+        [20,16,55,93,101,131].sort((arg1,arg2)=>{
+            return arg2-arg1;
         })[1]
-    );    //30
+    );    //101
 */
 
 
 /*
-    //reverse()
-    //it is used to reverse the array elements
-    console.log(
-        [10,20,30,40,50].reverse()
-    );    //[ 50, 40, 30, 20, 10 ]
+
+//reverse()
+//it is used to reverse the "arrays"
+console.log(
+    [10,20,30,40,50].reverse()
+);      //[ 50, 40, 30, 20, 10 ]
 
 
-    console.log(
-        ["Angular","React","Node"].reverse()
-    );    //[ 'Node', 'React', 'Angular' ]
+console.log(
+    Array.from("Hello").reverse().join("")
+);     //olleH
 
 
-    console.log(
-        Array.from("Hello").reverse().join("")
-    );
-    //[ 'H', 'e', 'l', 'l', 'o' ]
-    //[ 'o', 'l', 'l', 'e', 'H' ]
-    //olleH
+console.log(
+    Array.from("Welcome").reverse().join("")
+);      //emocleW
 
 
-    console.log(
-        Array.from("Welcome").reverse().join("")
-    );    //emocleW
+console.log(
+    ["Angular","NodeJS","ReactJS"].map((element,index)=>{
+        return Array.from(element).reverse().join("")
+    })
+);
+//["ralugnA","SJedoN","SJtcaeR"]
 
 
-    console.log(
-        ["Angular","NodeJS","ReactJS"].map((element,index)=>{
-            return Array.from(element).reverse().join("") 
-        })
-    );   //["ralugnA","SJedoN","SJtcaeR"]  
 
+console.log(
+    Array.from("Angular").reverse().join("")
+);    //ralugnA
 
-    console.log(
-        ["Angular","NodeJS","ReactJS"].map((element,index)=>{
-            return Array.from(element).reverse().join("") 
-        }).reverse()
-    );  
-    //["SJtcaeR","SJedoN","ralugnA"]
 */
-
 
 
 /*
-//join()
-//toString()
-
-console.log(
-    ['H','E','L','L','0'].toString().replace(",","")
-);    //H,E,L,L,0   //HE,L,L,0
-
-console.log(
-    ['H','E','L','L','0'].toString().replace(/,/g, "")
-);   //HELL0
-
-
-console.log(
-    ['H','E','L','L','0'].join("")
-);    //HELL0
+    //Array ---> string
+    //1) toString()
+    //2) join()
+    console.log(
+        ["H","E","L","L","O"].toString()
+    );   //H,E,L,L,O
+    console.log(
+        ["H","E","L","L","O"].join("")
+    );   //HELLO
+    console.log(
+        ["H","E","L","L","O"].toString().replace(",","")
+    );    //HE,L,L,O
+    console.log(
+        ["H","E","L","L","O"].toString().replace(/,/g,"")
+    );    //HELLO
 */
-
 
 
 /*
     //substr()
     console.log(
-        "Welcome to FullStack UI".substr(0,7)
-    );   //Welcome
+        "Welcome to AshokIT".substr(0,7)
+    );          //Welcome
+
+    console.log(
+        "Welcome to AshokIT".substr(8,2)
+    );          //to
 
 
     console.log(
-        "Welcome to FullStack UI".substr(8,2)
-    );    //to
+        "Welcome to AshokIT".substr(11)
+    );      //AshokIT
+*/
 
+
+/*
+//substring()
+console.log(
+    "Welcome to Angular11".substring(0,7)
+);      //Welcome
+
+console.log(
+    "Welcome to Angular11".substring(8,10)
+);      //to
+
+console.log(
+    "Welcome to Angular11".substring(11)
+);    //Angular11
+*/
+
+
+/*
+    console.log(
+        [10,20,30,40,50].fill(100)
+    );      //[ 100, 100, 100, 100, 100 ]
 
     console.log(
-        "Welcome to FullStack UI".substr(11,9)
-    );      //FullStack
-
+        [10,20,30,40,50].fill(200,1)
+    );   //[ 10, 200, 200, 200, 200 ]
 
     console.log(
-        "Welcome to FullStack UI".substr(21,2)
-    );     //UI
+        [10,20,30,40,50].fill(300,1,3)
+    );   //[10,300,300,40,50]
 */
 
 
 
-//substring()
+/*
+    console.log(
+        [1,[2],[3,4]].flat(1)
+    );    //[ 1, 2, 3, 4 ]
+
+    console.log(
+        [[1],[2],[3],[4],[5]].flat(1).reduce((firstValue,nextValue)=>{
+            return firstValue+nextValue;
+        })
+    );      //15
+
+    console.log(
+        [10,[[[[[[[[20]]]]]]]],[[[[[[[[[[[[[[[[[30]]]]]]]]]]]]]]]]]].flat(Infinity).reduce((firstValue,nextValue)=>{
+            return firstValue+nextValue;
+        })
+    );      //60
+*/
+
+
+/*
+    let arr1 = [1,2,3];
+    let arr2 = ["one","two","three"];
+    //[ [1,"one"], [2,"two"], [3,"three"] ]
+    console.log(
+        arr1.map((element,index)=>{
+        return [element,arr2[index]] 
+        }).flat(1)
+    );      
+    //[ 1, 'one', 2, 'two', 3, 'three' ] 
+
+
+    console.log(
+        arr1.flatMap((element,index)=>{
+        return [element,arr2[index]] 
+        })
+    );      //[ 1, 'one', 2, 'two', 3, 'three' ]
+*/
+
+/*
+    //trim()
+    //trimStart()
+    //trimEnd()
+    console.log(
+        " Hello ".trim().length
+    );    //5
+
+    console.log(
+        " Hello ".trimStart().length
+    );   //6
+
+    console.log(
+        " Hello ".trimEnd().length
+    );   //6
+*/
+/*
+    //padStart()
+    //padEnd()
+    console.log(
+        "Hello".padStart(20,"*")
+    );
+    console.log(
+        "Hello".padEnd(20,"#")
+    );
+*/
+
+/*
+    //split()
+    console.log(
+        "Welcome to Angular11".split(" ")
+    );  //[ 'Welcome', 'to', 'Angular11' ]
+*/
+
 console.log(
-    "Welcome to FullStack UI".substring(0,7)    
-);//Welcome
-
-
+    [10,20,10,20,10].lastIndexOf(10)
+);    //4
 
 console.log(
-    "H***e|||l&&&l&&&o".replace(/&/g,"").replace(/|/g,"")
-);
+    [10,20,10,20,10].lastIndexOf(20)
+);     //3
 
-//Hello
+
+let arr1 = [10,20,30,40,50,60,70,80,90,100];
+arr1.copyWithin(2,8);
+console.log(arr1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
