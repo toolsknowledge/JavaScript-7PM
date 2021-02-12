@@ -519,60 +519,55 @@ console.log(
 );    //Angular11
 */
 
-
 /*
+    //fill()
+    //it is used to replace the existed elements with new elements
     console.log(
         [10,20,30,40,50].fill(100)
-    );      //[ 100, 100, 100, 100, 100 ]
-
+    );    //[ 100, 100, 100, 100, 100 ]
     console.log(
-        [10,20,30,40,50].fill(200,1)
-    );   //[ 10, 200, 200, 200, 200 ]
-
+        [10,20,30,40,50].fill(100,2)
+    );   //[ 10, 20, 100, 100, 100 ]
     console.log(
-        [10,20,30,40,50].fill(300,1,3)
-    );   //[10,300,300,40,50]
-*/
-
-
-
-/*
-    console.log(
-        [1,[2],[3,4]].flat(1)
-    );    //[ 1, 2, 3, 4 ]
-
-    console.log(
-        [[1],[2],[3],[4],[5]].flat(1).reduce((firstValue,nextValue)=>{
-            return firstValue+nextValue;
-        })
-    );      //15
-
-    console.log(
-        [10,[[[[[[[[20]]]]]]]],[[[[[[[[[[[[[[[[[30]]]]]]]]]]]]]]]]]].flat(Infinity).reduce((firstValue,nextValue)=>{
-            return firstValue+nextValue;
-        })
-    );      //60
+        [10,20,30,40,50].fill(200,2,4)
+    );    //[ 10, 20, 200, 200, 50 ]
 */
 
 
 /*
+    //flat()
+    //to convert multi dimensional array to single dimensional array
+    console.log(
+        [1,[2],[3],4,[5]].flat(1)
+    );    //[ 1, 2, 3, 4, 5 ]
+
+    console.log(
+        [10,[[[[[[[20]]]]]]],[[[[[[[[[[[[[[[[[[30]]]]]]]]]]]]]]]]]]].flat(Infinity).reduce((firstValue,nextValue)=>{
+            return firstValue+nextValue;
+        })
+    );    //60
+*/
+
+
+/*
+    //flatMap()
     let arr1 = [1,2,3];
     let arr2 = ["one","two","three"];
-    //[ [1,"one"], [2,"two"], [3,"three"] ]
+
     console.log(
         arr1.map((element,index)=>{
-        return [element,arr2[index]] 
+            return [element,arr2[index]];
         }).flat(1)
-    );      
-    //[ 1, 'one', 2, 'two', 3, 'three' ] 
+    );   //[ 1, 'one', 2, 'two', 3, 'three' ]
 
 
     console.log(
         arr1.flatMap((element,index)=>{
-        return [element,arr2[index]] 
+            return [element,arr2[index]];
         })
-    );      //[ 1, 'one', 2, 'two', 3, 'three' ]
+    );    //[ 1, 'one', 2, 'two', 3, 'three' ]
 */
+
 
 /*
     //trim()
@@ -580,130 +575,66 @@ console.log(
     //trimEnd()
     console.log(
         " Hello ".trim().length
-    );    //5
+    );   //5
 
     console.log(
         " Hello ".trimStart().length
-    );   //6
+    );    //6  
+
 
     console.log(
         " Hello ".trimEnd().length
-    );   //6
+    );    //6
 */
+
+
+
 /*
     //padStart()
     //padEnd()
     console.log(
         "Hello".padStart(20,"*")
-    );
+    );    //***************Hello
+
     console.log(
-        "Hello".padEnd(20,"#")
-    );
+        "Hello".padEnd(20,"$")
+    );      //Hello$$$$$$$$$$$$$$$
 */
+
+
+
+
+
+
+/*
+    //lastIndexOf()
+    console.log(
+        [10,20,30,10,10,10,20,30].lastIndexOf(10)
+    );   //5
+
+    console.log(
+        [10,20,30,10,10,10,20,30].lastIndexOf(20)
+    );  //6
+
+    console.log(
+        [10,20,30,10,10,10,20,30].lastIndexOf(30)
+    );  //7
+*/
+
 
 /*
     //split()
+    //it is used to split the string based on separator
     console.log(
         "Welcome to Angular11".split(" ")
-    );  //[ 'Welcome', 'to', 'Angular11' ]
+    );    //[ 'Welcome', 'to', 'Angular11' ]
 */
 
+
+//repeat()
 console.log(
-    [10,20,10,20,10].lastIndexOf(10)
-);    //4
-
-console.log(
-    [10,20,10,20,10].lastIndexOf(20)
-);     //3
-
-
-let arr1 = [10,20,30,40,50,60,70,80,90,100];
-arr1.copyWithin(2,8);
-console.log(arr1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "Hello".repeat(5)
+);    //HelloHelloHelloHelloHello
 
 
 
