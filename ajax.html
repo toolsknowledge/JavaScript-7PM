@@ -1,0 +1,119 @@
+<!--
+    - as a developer, we can communicate with server in two ways.
+                1) Synchrnous
+
+                2) Asynchrnous
+
+    - Execustion of Requests one by one technically called as Synchrnous Communications.
+
+    - Execustion of Requests independently at a time called as "Asynchrnous" Communication.
+
+    - we will make Asynchrnous communication by using
+
+                => jQuery
+
+                => AngularJS
+
+                => Angular11
+
+                => ReactJS
+
+                => VueJS
+
+    - jQuery is the library(JavaScript library)
+
+    - jQuery simplifies the DOM Manipulations.
+
+    - we will include jQuery library by using following CDN.
+
+    CDN : https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+
+-->
+
+
+
+<!--
+    Ex1.
+        https://restcountries.eu/rest/v2/all
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $.ajax({
+                method:"GET",
+                url:"https://restcountries.eu/rest/v2/all",
+                success:(posRes)=>{
+                    console.log(posRes);
+                },
+                error:(errRes)=>{
+                    console.log(errRes);
+                }
+            });
+        </script>
+    </body>
+</html>
+-->
+
+
+
+
+<!--
+    Ex2.
+        http://test-routes.herokuapp.com/test/uppercase   (POST)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $.ajax({
+                method : "POST",
+                url : "http://test-routes.herokuapp.com/test/uppercase",
+                data : {message : "welcome to ashokit"},
+                success : (posRes)=>{
+                    console.log(posRes);
+                },
+                error : (errRes)=>{
+                    console.log(errRes);
+                }
+            })
+        </script>
+    </body>
+</html>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
