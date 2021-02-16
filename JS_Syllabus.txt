@@ -184,7 +184,9 @@ Syntax.
 
 
 
+> json-server --watch demo1.json
 
+=> http://localhost:3000/employees
 
 
 
