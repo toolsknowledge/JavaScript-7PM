@@ -1,0 +1,90 @@
+<!--
+    1) JSON Server
+
+    2) AJAX Call   (jQuery)
+
+    3) Promsises
+
+    4) async & await  (Consume Promises by using latest keywords)
+
+Step 1.
+    create the json file
+
+    sample.json
+
+Step 2.
+    deploy sample.json file in json server
+
+    > json-server --watch sample.json
+
+    Rest API Call : http://localhost:3000/products
+
+Step 3.
+    test above rest api call by using "Postman"
+
+
+Step 4.
+    develop web page
+
+Assignment :
+    show the progress bar
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            function makeAsyncCall(){
+                return new Promise((resolve,reject)=>{
+                    $.ajax({
+                        method : "GET",
+                        url : "http://localhost:3000/products",
+                        success : (posRes)=>{
+                            resolve(posRes);
+                        },
+                        error : (errRes)=>{
+                            reject(errRes);
+                        }
+
+                    })
+                })
+            };  
+            async function consumePromise(){
+                let res = await makeAsyncCall();
+                document.write(`<table border="1"
+                                       cellpadding="10px"
+                                       cellspacing="10px"
+                                       align="center">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>brand</th>
+                                            <th>type</th>
+                                            <th>price</th>
+                                            <th>quantity</th>
+                                            <th>image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>`);
+                    res.forEach((element,index)=>{
+                        document.write(`
+                            <tr>
+                                <td>${element.id}</td>
+                                <td>${element.brand}</td>
+                                <td>${element.type}</td>
+                                <td>${element.price}</td>
+                                <td>${element.quantity}</td>
+                                <td><img width="100px" src="${element.image}"></td>
+                            </tr>
+                        `);
+                    });
+                    document.write(`</tbody></table>`);
+            };
+            consumePromise();
+        </script>
+    </body>
+</html>
+
+
