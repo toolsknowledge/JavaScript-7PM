@@ -1,42 +1,22 @@
 <!--
-    - as a developer, we can communicate with server in two ways.
-                1) Synchrnous
+    as a developer, we can connect to server two ways.
 
-                2) Asynchrnous
+            1) Synchrnous Communication
 
-    - Execustion of Requests one by one technically called as Synchrnous Communications.
+            2) Asynchrnous Communication
 
-    - Execustion of Requests independently at a time called as "Asynchrnous" Communication.
+    executing network calls with dependencies called as Synchronus Communication.
 
-    - we will make Asynchrnous communication by using
+    executing network calls independently called as Asynchrnous Communication.
 
-                => jQuery
+    in general, we will make Asynchrnous communication by using jQuery library.
 
-                => AngularJS
-
-                => Angular11
-
-                => ReactJS
-
-                => VueJS
-
-    - jQuery is the library(JavaScript library)
-
-    - jQuery simplifies the DOM Manipulations.
-
-    - we will include jQuery library by using following CDN.
 
     CDN : https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
-
 -->
 
-
-
 <!--
-    Ex1.
-        https://restcountries.eu/rest/v2/all
-
-<!DOCTYPE html>
+<!DOCTPE html>
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -44,12 +24,12 @@
     <body>
         <script>
             $.ajax({
-                method:"GET",
-                url:"https://restcountries.eu/rest/v2/all",
-                success:(posRes)=>{
+                method : "GET",
+                url : "https://restcountries.eu/rest/v2/all",
+                success : (posRes)=>{
                     console.log(posRes);
                 },
-                error:(errRes)=>{
+                error : (errRes)=>{
                     console.log(errRes);
                 }
             });
@@ -58,12 +38,6 @@
 </html>
 -->
 
-
-
-
-<!--
-    Ex2.
-        http://test-routes.herokuapp.com/test/uppercase   (POST)
 
 <!DOCTYPE html>
 <html>
@@ -75,26 +49,17 @@
             $.ajax({
                 method : "POST",
                 url : "http://test-routes.herokuapp.com/test/uppercase",
-                data : {message : "welcome to ashokit"},
+                data : {"message":"welcome to ashokit"},
                 success : (posRes)=>{
                     console.log(posRes);
                 },
                 error : (errRes)=>{
                     console.log(errRes);
                 }
-            })
+            });
         </script>
     </body>
 </html>
--->
-
-
-
-
-
-
-
-
 
 
 

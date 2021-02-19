@@ -162,31 +162,35 @@ Syntax.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 > json-server --watch demo1.json
 
 => http://localhost:3000/employees
+
+
+
+CallBacks in JavaScript
+=======================
+	- passing one function to another function as an argument called as "callback".
+
+	- in general, we will use callbacks, while making "asynchronous" calls.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
