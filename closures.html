@@ -1,0 +1,62 @@
+<!--
+    a function "inside" another function, called as "inner" function.
+
+    inner function have the capability to access "outer" function data, and "global" data also.
+
+    if inner function access outer function data, then such "scenario" technically called as "closure"
+-->
+
+<!--
+<script>
+    function fun_one(){
+        var x = 10;
+        var y = 20;
+
+        return ()=>{
+            console.log( x );
+            console.log( y );
+        };
+    };
+
+    //dir() function used to elabrate the DOM Structure
+    console.dir( fun_one() );    //Closure (fun_one) {x: 10}
+                                  //0: Closure (fun_one) {x: 10, y: 20}
+</script>
+-->
+
+
+<script>
+    for(var i=0;i<5;i++){
+        ((i)=>{
+            setTimeout(()=>{
+                console.log(i);
+            },5000)
+        })(i);
+    }; 
+    //var : 5 5 5 5 5   (bug in var keyword)
+    //let : 0 1 2 3 4   (correct answe with let keyword)   (ES6)
+
+    //IIFE : 0 1 2 3 4   (ES9)
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

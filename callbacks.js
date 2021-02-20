@@ -63,6 +63,7 @@
 */
 
 
+/*
 function add(num,callback){
     return callback(num+5,false);
 };
@@ -96,6 +97,71 @@ add(5, (addRes,error)=>{
         });
     }
 });   //callback hell     (promises)
+*/
+
+
+
+
+
+
+function add(num){
+    return new Promise((resolve,reject)=>{
+        resolve( num+5 );
+    });
+};
+
+function sub(num){
+    return new Promise((resolve,reject)=>{
+        resolve( num-3 );
+    });
+};
+
+function mul(num){
+    return new Promise((resolve,reject)=>{
+        resolve( num*2 );
+    });
+};
+
+function div(num){
+    return new Promise((resolve,reject)=>{
+        resolve( (num/2)-2 );
+    });
+};
+
+
+//consume the promise
+//async & await
+async function consume(){
+    let addRes = await add(5);
+    let subRes = await sub(addRes);
+    let mulRes = await mul(subRes);
+    let divRes = await div(mulRes);
+    console.log( addRes, subRes, mulRes, divRes );
+};
+consume();    //10 7 14 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

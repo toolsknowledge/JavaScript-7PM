@@ -1,0 +1,250 @@
+<!--
+<script>
+    let my_obj = {};
+    
+    let key1 = {};
+    let value1 = 100;
+    my_obj[key1] = value1;
+
+
+    let key2 = {};
+    let value2 = 200;
+    my_obj[key2] = value2;
+
+
+    console.log(my_obj);
+</script>
+-->
+
+<!--
+    in json, if we use json objects as "keys", automatically old keys overwriting with latest keys.
+
+    in order to overcome above issue netscape introduced Data Structures.
+
+    1) Map
+
+    2) WeakMap
+
+    3) Set
+
+    4) WeakSet
+-->
+
+<!--
+<script>
+    let map = new Map();
+    console.dir(map);
+
+    //clear()
+    //Map()
+    //delete()
+    //entries(),forEach(),for....of()
+    //get()
+    //has()
+    //keys()
+    //set()
+    //size
+    //values()
+</script>
+-->
+
+<!--
+<script>
+    let map = new Map();
+
+    let key1 = {};
+    let value1 = 100;
+    map.set(key1,value1);
+
+
+    let key2 = {};
+    let value2 = 200;
+    map.set(key2,value2);
+
+    console.log(map);
+</script>
+-->
+
+
+<!--
+<script>
+    let map = new Map();
+
+    map.set("key1",100)
+       .set(100,200)
+       .set(true,false)
+       .set({},400);
+    console.log(map);
+    console.log( map.has("key1") );   //true
+
+    map.delete("key1");
+    console.log(map.keys());
+    console.log(map.values());
+
+    for(let [k,v] of map){
+        console.log(k,v);
+    };
+
+    console.log(map.size);
+
+
+</script>
+-->
+
+
+<!--
+<script>
+    let weakMap = new WeakMap();
+    console.dir(weakMap);
+
+    //WeakMap()
+    //delete()
+    //get()
+    //has()
+    //set()
+</script>
+-->
+
+<!--
+<script>
+    let weakMap = new WeakMap();
+    weakMap.set({},100)
+            .set({},200)
+            .set("key3",300)
+            .set(100,100);
+    console.log(weakMap);
+</script>
+-->
+
+<!--
+    in case of Map Data Structure, we can take all data types as keys
+    Ex.
+        string
+        number
+        boolean
+        object
+        bigint
+        undefined
+        null
+        Symbol
+
+    in case of WeakMap data structure, it will allow only json objects as keys
+-->
+
+
+<!--
+<script>
+    let map = new Map();
+    map.set("key1",100)
+       .set("key2",200)
+       .set("key1",300);
+    console.log(map);
+
+    //map won't allows duplicate keys
+</script>
+-->
+
+
+<!--
+    Set
+    ===
+        - Set won't allows duplicate values
+-->
+
+<!--
+<script>
+    let set = new Set();
+    console.dir(set);
+
+    //add()
+    //clear()
+    //Set()
+    //delete()
+    //entries() , forEach(),  for...of
+    //has()
+    //values()
+    //size
+
+</script>
+-->
+
+<!--
+<script>
+    let set = new Set();
+    set.add(10)
+       .add(20)
+       .add(30)
+       .add(10)
+       .add(20)
+       .add(30);
+    console.log(set);      //{10, 20, 30}
+</script>
+-->
+
+<!--
+<script>
+    console.log( [...new Set([10,20,30,10,20,30])] );    //[10, 20, 30]
+</script>
+-->
+
+
+<!--
+<script>
+    let set = new Set();
+    set.add(10)
+       .add(20)
+       .add(30);
+    console.log( set );                 //{10, 20, 30}
+    set.delete(30);
+    console.log(set.has(30));    //false
+    for(let k of set){
+        console.log(k);    //10  20
+    };
+    console.log(set.size);    //2
+</script>
+-->
+
+
+<script>
+    let weakSet = new WeakSet();
+    weakSet.add({})
+           .add({})
+           .add(10);
+    console.log(weakSet);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
