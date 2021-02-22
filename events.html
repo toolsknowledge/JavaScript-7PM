@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+    <div id="parent" style="width: 300px;height: 300px;border: 1px solid red;color: red;text-align: center;">
+        Parent
+        <div id="child" style="width: 250px;height: 250px;margin: 10px;border: 1px solid green;color: green;">
+            Child
+            <div id="subchild" style="width: 200px;height: 200px;border: 1px solid blue;color: blue;margin: 20px;">
+                SubChild
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        /*
+
+        //Event Bubbling
+        //propagation of events from child to parent
+        //get the reference of DOM Elements.
+        let parent = document.getElementById("parent");
+        let child = document.getElementById("child");
+        let subchild = document.getElementById("subchild");
+
+        //add the listener
+        parent.addEventListener("click",()=>{
+            console.log("parent");
+        });
+        child.addEventListener("click",()=>{
+                console.log("child");
+        });
+        subchild.addEventListener("click",()=>{
+                console.log("subchild");
+        });
+        */
+
+        //Event Capturing
+        //Propagation of events from parent to child
+        let parent = document.querySelector("#parent");
+        let child = document.querySelector("#child");
+        let subchild = document.querySelector("#subchild");
+        parent.addEventListener("click",()=>{
+            console.log("parent");
+        },true);
+        child.addEventListener("click",()=>{
+            console.log("child");
+        },true);
+        subchild.addEventListener("click",()=>{
+            console.log("subchild");
+        },true);
+
+    </script>
+
+</html>

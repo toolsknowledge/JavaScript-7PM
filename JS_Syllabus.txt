@@ -45,6 +45,9 @@ Syllabus of JavaScript (ES6 to ES11)
 
 17) Throttling
 
+
+
+
 						Introduction
 
 	=> JavaScript is the "Scripting" Language.
