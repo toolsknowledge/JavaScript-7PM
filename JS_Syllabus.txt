@@ -57,6 +57,8 @@ Syllabus of JavaScript (ES6 to ES11)
 
 
 
+
+
 						Introduction
 
 	=> JavaScript is the "Scripting" Language.
