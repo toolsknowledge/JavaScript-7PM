@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <button id="my_btn">ClickMe</button>
+
+    <script>
+
+        const debounce = (fn,delay)=>{
+            let timedOut;
+
+            return function(...args){
+                if(timedOut){
+                    clearTimeout(timedOut);
+                    console.log( timedOut );
+                }
+
+                timedOut = setTimeout(()=>{
+                    fn(...args);
+                },delay);
+
+            };
+
+        };
+
+
+        document.getElementById("my_btn").addEventListener("click", 
+                debounce( e=>{ console.log("payment clicked") }, 2000) );
+    </script>
+</html>
