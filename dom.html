@@ -1,0 +1,73 @@
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Manipulations</title>
+    </head>
+    <body>
+        <p id="my_paragraph">Angular11</p>
+        <button id="my_btn">ClickMe</button>
+
+        <script>
+            let p = document.getElementById("my_paragraph");
+           
+            let btn = document.getElementById("my_btn");
+
+            btn.addEventListener("click",()=>{
+               if(p.innerText === "Angular11"){
+                   alert("Succcess");
+               }else{
+                   alert("Fail");
+               }
+            });
+
+        </script>
+    </body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+    <fieldset>
+        <legend>Login Form</legend>
+        <input type="text" id="uname">
+        <br><br>
+        <input type="password" id="upwd">
+        <br><br>
+        <button id="my_btn">Login</button>
+    </fieldset>    
+    <script>
+        let uname = document.getElementById("uname");
+        let upwd = document.getElementById("upwd");
+
+        let my_btn = document.getElementById("my_btn");
+
+        my_btn.addEventListener("click",()=>{
+            if(uname.value === "ashokit" && upwd.value === "ashokit"){
+                alert("Success");
+            }else{
+                alert("Fail");
+            }
+        });
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
